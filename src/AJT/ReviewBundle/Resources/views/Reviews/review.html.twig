@@ -1,0 +1,25 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+	{{ parent() }}
+
+    <div class="container">
+	    <h2>Add Review</h2>
+	    <br>You can edit the file to import <a href="https://docs.google.com/spreadsheets/d/1GCOhIkzm13Kln6uyUhK7ShMoPn_qUCYLxCKDIogPQt0/edit#gid=0">here</a>.
+	    <br>The file won't be removed.
+	    <br><a class="btn btn-sm btn-danger" href="{{ path('ajt_review_import') }}">Import review file</a>
+
+	    {{ form_start(form) }}<br/>
+
+	    <div class="form-group">
+	    {{ form_label(form.review) }}<br/>
+	    {{ form_widget(form.review, {'attr' : {'placeholder' : 'Your review'}}) }}
+	    <span class="text_danger">{{ form_errors(form.review) }}</span><br/>
+
+	    {{ form_widget(form.save, {'label' : 'Create review'}) }}
+	    </div>
+
+	    {{ form_rest(form) }}
+    </div>
+
+{% endblock %}

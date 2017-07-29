@@ -1,0 +1,4 @@
+services:
+    utils:
+        class: AJT\ReviewBundle\Services\Utils
+        arguments: ["@doctrine.orm.entity_manager"]

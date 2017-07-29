@@ -1,0 +1,55 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+	{{ parent() }}
+
+	<div class="container">
+			<h2>Add new Positive Word</h2>
+
+			{{ form_start(formPositive) }}<br/>
+
+			<div class="form-group">
+			    {{ form_label(formPositive.positive) }}<br/>
+			    {{ form_widget(formPositive.positive, {'attr' : {'placeholder' : 'Your new positive word'}}) }}
+			    <span class="text_danger">{{ form_errors(formPositive.positive) }}</span><br/>
+			    
+			    <br/>
+			    {{ form_widget(formPositive.savePositive, {'label' : 'Create new positive word'}) }}
+		    </div>
+
+		    {{ form_rest(formPositive) }}
+
+		    <div>
+
+			    <div>
+			    	<table class="table table-striped table-bordered">
+						<tr>
+							<th class="col-md-1">ID</th>
+							<th class="col-md-6">Positive</th>
+							<th class="col-md-2">Action</th>
+						</tr>
+
+		                {% for p in pos %}
+							<tr>
+								<td>{{ p.id }}</td>
+								<td>{{ p.positive }}</td>
+								<td>
+									<a class="btn btn-sm btn-danger" href="{{ path('ajt_review_deletePositive', { page: page, id: p.id }) }}">Delete</a>
+								</td>
+							</tr>
+		                {% endfor %}
+
+					</table>
+
+					<ul class="pagination">
+			            {% for i in 1..pagesCount %}
+			                <li><a href="{{ path('ajt_review_positive_p', {'page': i}) }}">{{ i }}</a></li> 
+			            {% endfor %}
+			        </ul>
+				</div>
+
+		    </div>
+    </div>
+
+
+{% endblock %}

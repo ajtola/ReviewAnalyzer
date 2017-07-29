@@ -1,0 +1,85 @@
+ajt_review_index:
+    path:     /
+    defaults: { _controller: AJTReviewBundle:Reviews:index, page: 1 }
+
+ajt_review_index:
+    path:     /index
+    defaults: { _controller: AJTReviewBundle:Reviews:index, page: 1 }
+
+ajt_review_index_p:
+    path:     /index/{page}
+    defaults:  { _controller: AJTReviewBundle:Reviews:index, page: 1 }
+
+ajt_review_topic:
+    path:     /topic/add
+    defaults: { _controller: AJTReviewBundle:Reviews:addTopic, page: 1 }
+
+ajt_review_topic_p:
+    path:     /topic/add/{page}
+    defaults: { _controller: AJTReviewBundle:Reviews:addTopic, page: 1 }
+
+ajt_review_review:
+    path:     /review/add
+    defaults: { _controller: AJTReviewBundle:Reviews:addReview }
+
+ajt_review_positive:
+    path:     /positive/add
+    defaults: { _controller: AJTReviewBundle:Reviews:addPositive, page: 1 }
+
+ajt_review_positive_p:
+    path:     /positive/add/{page}
+    defaults: { _controller: AJTReviewBundle:Reviews:addPositive, page: 1 }
+
+ajt_review_negative:
+    path:     /negative/add
+    defaults: { _controller: AJTReviewBundle:Reviews:addNegative, page: 1 }
+
+ajt_review_negative_p:
+    path:     /negative/add/{page}
+    defaults: { _controller: AJTReviewBundle:Reviews:addNegative, page: 1 }
+
+ajt_review_createReview:
+    path:     /review/create
+    defaults: { _controller: AJTReviewBundle:Reviews:createReview }
+    methods: POST
+
+ajt_review_createTopic:
+    path:     /topic/create
+    defaults: { _controller: AJTReviewBundle:Reviews:createTopic }
+    methods: POST
+
+ajt_review_createPositive:
+    path:     /positive/create
+    defaults: { _controller: AJTReviewBundle:Reviews:createPositive}
+    methods: POST
+
+ajt_review_createNegative:
+    path:     /negative/create
+    defaults: { _controller: AJTReviewBundle:Reviews:createNegative }
+    methods: POST
+
+ajt_review_run:
+    path:     /review/run/{page}/{id}
+    defaults: { _controller: AJTReviewBundle:Reviews:run}
+    methods: GET
+
+ajt_review_deleteReview:
+    path:     /review/delete/{page}/{id}
+    defaults: { _controller: AJTReviewBundle:Reviews:deleteReview }
+
+ajt_review_deletePositive:
+    path:     /positive/delete/{page}/{id}
+    defaults: { _controller: AJTReviewBundle:Reviews:deletePositive }
+
+ajt_review_deleteNegative:
+    path:     /negative/delete/{page}/{id}
+    defaults: { _controller: AJTReviewBundle:Reviews:deleteNegative }
+
+ajt_review_deleteTopic:
+    path:     /topic/delete/{page}/{id}
+    defaults: { _controller: AJTReviewBundle:Reviews:deleteTopic }
+
+ajt_review_import:
+    path:     /review/import
+    defaults: { _controller: AJTReviewBundle:Reviews:import}
+    methods: GET

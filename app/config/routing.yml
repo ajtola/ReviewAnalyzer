@@ -1,0 +1,7 @@
+ajt_review:
+    resource: "@AJTReviewBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

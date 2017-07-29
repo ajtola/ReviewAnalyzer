@@ -1,0 +1,63 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+	{{ parent() }}
+
+	<div class="container">
+		    <h2>Add new Topic</h2>
+
+		    {{ form_start(formTopic) }}<br/>
+
+		    <div class="form-group">
+			    {{ form_label(formTopic.topic) }}<br/>
+			    {{ form_widget(formTopic.topic, {'attr' : {'placeholder' : 'Your new topic'}}) }}
+			    <span class="text_danger">{{ form_errors(formTopic.topic) }}</span><br/>
+
+			    {{ form_label(formTopic.alternativeName) }}<br/>
+			    {{ form_widget(formTopic.alternativeName, {'attr' : {'placeholder' : 'Separated by commas'}}) }}
+			    <span class="text_danger">{{ form_errors(formTopic.alternativeName) }}</span><br/>
+
+			    <br/>
+			    {{ form_widget(formTopic.saveTopic, {'label' : 'Create new topics'}) }}
+		    </div>
+
+		    {{ form_end(formTopic) }}
+
+		    <div>
+
+			    <div>
+			    	<table class="table table-striped table-bordered">
+						<tr>
+							<th class="col-md-1">ID</th>
+							<th class="col-md-4">Topic</th>
+							<th class="col-md-6">Alternative names</th>
+							<th class="col-md-2">Action</th>
+						</tr>
+
+		                {% for t in top %}
+							<tr>
+								<td>{{ t.id }}</td>
+								<td>{{ t.topic }}</td>
+								<td>{{ t.alternativeName }}</td>
+								<td>
+									<a class="btn btn-sm btn-danger" href="{{ path('ajt_review_deleteTopic', { page: page, id: t.id }) }}">Delete</a>
+								</td>
+							</tr>
+		                {% endfor %}
+
+					</table>
+
+					<ul class="pagination">
+			            {% for i in 1..pagesCount %}
+			                <li><a href="{{ path('ajt_review_topic_p', {'page': i}) }}">{{ i }}</a></li> 
+			            {% endfor %}
+			        </ul>
+				</div>
+
+		    </div>
+
+
+    </div>
+
+
+{% endblock %}
