@@ -63,6 +63,10 @@ ajt_review_run:
     defaults: { _controller: AJTReviewBundle:Reviews:run}
     methods: GET
 
+ajt_review_runAll:
+    path:     /review/runAll
+    defaults: { _controller: AJTReviewBundle:Reviews:runAll}
+
 ajt_review_deleteReview:
     path:     /review/delete/{page}/{id}
     defaults: { _controller: AJTReviewBundle:Reviews:deleteReview }

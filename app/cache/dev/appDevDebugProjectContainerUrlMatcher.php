@@ -208,16 +208,24 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         not_ajt_review_createNegative:
 
         if (0 === strpos($pathinfo, '/review')) {
-            // ajt_review_run
-            if (0 === strpos($pathinfo, '/review/run') && preg_match('#^/review/run/(?P<page>[^/]++)/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_ajt_review_run;
+            if (0 === strpos($pathinfo, '/review/run')) {
+                // ajt_review_run
+                if (preg_match('#^/review/run/(?P<page>[^/]++)/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_ajt_review_run;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'ajt_review_run')), array (  '_controller' => 'AJT\\ReviewBundle\\Controller\\ReviewsController::runAction',));
+                }
+                not_ajt_review_run:
+
+                // ajt_review_runAll
+                if ($pathinfo === '/review/runAll') {
+                    return array (  '_controller' => 'AJT\\ReviewBundle\\Controller\\ReviewsController::runAllAction',  '_route' => 'ajt_review_runAll',);
                 }
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ajt_review_run')), array (  '_controller' => 'AJT\\ReviewBundle\\Controller\\ReviewsController::runAction',));
             }
-            not_ajt_review_run:
 
             // ajt_review_deleteReview
             if (0 === strpos($pathinfo, '/review/delete') && preg_match('#^/review/delete/(?P<page>[^/]++)/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {

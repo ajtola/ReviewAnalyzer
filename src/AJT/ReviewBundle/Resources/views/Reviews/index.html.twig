@@ -24,7 +24,6 @@
 					<tr>
 						<td>{{ rev.id }}</td>
 						<td>{{ rev.review }}</td>
-						<!--<td>{{ rev.analysis }} HOLA</td>-->
 						<td>
 							{% set analysis = rev.analysis | split(';') %}
 							{% for a in analysis%}
@@ -42,6 +41,7 @@
                 {% endfor %}
 
 			</table>
+			<a class="btn btn-sm btn-primary" href="{{ path('ajt_review_runAll') }}">Rate All</a>
 		</div>
 
 		<div>

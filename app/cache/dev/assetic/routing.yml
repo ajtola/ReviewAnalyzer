@@ -2,4 +2,4 @@ _assetic:
     resource: .
     type: assetic
 _app:
-    resource: /home/antonio/Challenge/ReviewAnalyzer/app/config/routing_dev.yml
+    resource: /home/antonio/ChallengeRepo/ReviewAnalyzer/app/config/routing_dev.yml

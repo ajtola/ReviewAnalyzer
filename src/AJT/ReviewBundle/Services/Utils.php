@@ -149,6 +149,109 @@ class Utils
 
     }
 
+    public function runAnalysis($id){
+        $positiveArray = $this->getPositiveArray();
+        $negativeArray = $this->getNegativeArray();       
+        $topicArray = $this->getTopicArray();
+
+        $repository = $this->manager->getRepository('AJTReviewBundle:Review');
+        $rev = $repository->find($id);
+
+        $reviewSentences = $this->applyFiltersToReview($rev->getReview());
+
+        $totalScore = array();
+        $totalScore["analysis"] = "";
+        $totalScore["score"] = 0;
+
+        foreach ($reviewSentences as $i => $sentence) {
+            $score = $this->sentenceAnalysis($sentence, $topicArray, $positiveArray, $negativeArray);
+            $totalScore["analysis"] = $totalScore["analysis"] . $score["analysis"];
+            $totalScore["score"] = $totalScore["score"] + $score["score"];
+        }
+
+        return $totalScore;
+    }
+
+    public function sentenceAnalysis($sentence, $topics, $positives, $negatives){
+
+        $positiveScore = $this->analysis($sentence, $topics, $positives);
+        $negativeScore = $this->analysis($sentence, $topics, $negatives);
+
+        $score["analysis"] = $positiveScore["analysis"] . $negativeScore["analysis"];
+        $score["score"] = $positiveScore["score"] - $negativeScore["score"];
+
+        return $score;
+
+    }
+
+    public function analysis($sentence, $topics, $adjectives){
+
+        $score["analysis"] = "";
+        $score["score"] = 0;
+
+        $topic = $this->lookForTopic($sentence, $topics);
+        $adjective = $this->lookForAdjective($sentence, $adjectives);
+
+
+        if (($topic != null) && ($adjective != null)){
+
+            $score["analysis"] = $this->scoreAnalysis($sentence, $topic, $adjective);
+            $score["score"] = 1;
+
+        } elseif (($topic == null) && ($adjective != null)){
+            $score["analysis"] = $this->scoreAnalysisWithoutTopic($sentence, $adjective);
+            $score["score"] = 1;
+        }
+
+        return $score;
+
+    }
+
+    public function lookForTopic($sentence, $topics){
+        foreach ($topics as $topic => $alternativeTopics) {
+            if (strpos($sentence, " ".$topic." ")){
+                return $topic;
+            }else{
+                foreach ($alternativeTopics as $id => $alternativeTopic) {
+                    if ($alternativeTopic != null){
+                        if (strpos($sentence, " ".$alternativeTopic." " ) !== false){
+                            return $alternativeTopic;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public function lookForAdjective($sentence, $adjectives){
+        foreach ($adjectives as $id => $adjective) {
+            if (strpos($sentence, " ".$adjective." ") !== false){
+                return $adjective;
+            }
+        }
+    }
+
+    public function scoreAnalysis($sentence, $topic, $adjective){
+        $topicPos = strpos($sentence, $topic);
+        $adjectivePos = strpos($sentence, $adjective);
+
+        if ($topicPos < $adjectivePos){
+            return substr($sentence, $topicPos, $adjectivePos + (strlen($adjective)) - $topicPos).";";
+        }else{
+            return substr($sentence, $adjectivePos, $topicPos + (strlen($topic)) - $adjectivePos).";";
+        }
+
+    }
+
+    public function scoreAnalysisWithoutTopic($sentence, $adjective){
+
+        $adjectivePos = strpos($sentence, $adjective);
+        
+        return substr($sentence, $adjectivePos, $adjectivePos + (strlen($adjective))).";";
+
+    }
+
+
 }
 
 
