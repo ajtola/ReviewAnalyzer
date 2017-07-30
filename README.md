@@ -7,11 +7,11 @@ This app requires some PHP modules that will not be installed running the *compo
 
 Use the following command to check if this modules are installed:
 
-'php -m | grep curl'
+`php -m | grep curl`
 
 and
 
-'php -m | grep pdo_sqlite'
+`php -m | grep pdo_sqlite`
 
 If they aren't installed, please install them with sudo permissions.
 
@@ -20,15 +20,15 @@ If they aren't installed, please install them with sudo permissions.
 
 To install this app, you need to run the following command:
 
-'git clone https://github.com/ajtola/ReviewAnalyzer.git'
+`git clone https://github.com/ajtola/ReviewAnalyzer.git`
 
 To run the application, open a new terminal and run:
 
-'php app/console server:run'
+`php app/console server:run`
 
 This command allow you to access the web appplication in a local web browser. To access from a remote web browser (with visibility), use this command instead:
 
-'php app/console server:run 0.0.0.0'
+`php app/console server:run 0.0.0.0`
 
 
 # Usage
