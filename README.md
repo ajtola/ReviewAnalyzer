@@ -9,9 +9,9 @@ Use the following command to check if this modules are installed:
 
 `php -m | grep curl`
 
-and
-
 `php -m | grep pdo_sqlite`
+
+`php -m | grep dom`
 
 If they aren't installed, please install them with sudo permissions.
 
