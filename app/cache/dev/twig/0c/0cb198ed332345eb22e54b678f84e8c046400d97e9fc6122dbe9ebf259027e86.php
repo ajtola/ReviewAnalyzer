@@ -15,8 +15,8 @@ class __TwigTemplate_5bf25c9a63e895cffbe7cad3ec5f934cce19e6d20176e0adaaf32ec9e55
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_dbe32b832b833bc7f99971295ec7284c51ab47750377b0bdbfc1d070a695a41a = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_dbe32b832b833bc7f99971295ec7284c51ab47750377b0bdbfc1d070a695a41a->enter($__internal_dbe32b832b833bc7f99971295ec7284c51ab47750377b0bdbfc1d070a695a41a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "WebProfilerBundle:Profiler:toolbar.html.twig"));
+        $__internal_d480de8344421e57a7f20de277df65aaf9f9f92d4349075504f3989128d19d22 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_d480de8344421e57a7f20de277df65aaf9f9f92d4349075504f3989128d19d22->enter($__internal_d480de8344421e57a7f20de277df65aaf9f9f92d4349075504f3989128d19d22_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "WebProfilerBundle:Profiler:toolbar.html.twig"));
 
         // line 1
         echo "<!-- START of Symfony Web Debug Toolbar -->
@@ -94,17 +94,17 @@ class __TwigTemplate_5bf25c9a63e895cffbe7cad3ec5f934cce19e6d20176e0adaaf32ec9e55
             if (            $this->loadTemplate($context["template"], "WebProfilerBundle:Profiler:toolbar.html.twig", 27)->hasBlock("toolbar", $context)) {
                 // line 28
                 echo "            ";
-                $__internal_4a284ccf4e631e3a8c6b3793606766f512f183d47a1cf07715d33df196fea19b = array("collector" => $this->getAttribute(                // line 29
+                $__internal_73e91b17722a5780e8aa15488e6ac9cd1741bfa9558e1d537f20f014ef16513d = array("collector" => $this->getAttribute(                // line 29
 (isset($context["profile"]) ? $context["profile"] : $this->getContext($context, "profile")), "getcollector", array(0 => $context["name"]), "method"), "profiler_url" =>                 // line 30
 (isset($context["profiler_url"]) ? $context["profiler_url"] : $this->getContext($context, "profiler_url")), "token" => $this->getAttribute(                // line 31
 (isset($context["profile"]) ? $context["profile"] : $this->getContext($context, "profile")), "token", array()), "name" =>                 // line 32
 $context["name"], "profiler_markup_version" =>                 // line 33
 (isset($context["profiler_markup_version"]) ? $context["profiler_markup_version"] : $this->getContext($context, "profiler_markup_version")));
-                if (!is_array($__internal_4a284ccf4e631e3a8c6b3793606766f512f183d47a1cf07715d33df196fea19b)) {
+                if (!is_array($__internal_73e91b17722a5780e8aa15488e6ac9cd1741bfa9558e1d537f20f014ef16513d)) {
                     throw new Twig_Error_Runtime('Variables passed to the "with" tag must be a hash.');
                 }
                 $context['_parent'] = $context;
-                $context = array_merge($context, $__internal_4a284ccf4e631e3a8c6b3793606766f512f183d47a1cf07715d33df196fea19b);
+                $context = array_merge($context, $__internal_73e91b17722a5780e8aa15488e6ac9cd1741bfa9558e1d537f20f014ef16513d);
                 // line 35
                 echo "                ";
                 $this->loadTemplate($context["template"], "WebProfilerBundle:Profiler:toolbar.html.twig", 35)->displayBlock("toolbar", $context);
@@ -149,7 +149,7 @@ $context["name"], "profiler_markup_version" =>                 // line 33
 <!-- END of Symfony Web Debug Toolbar -->
 ";
         
-        $__internal_dbe32b832b833bc7f99971295ec7284c51ab47750377b0bdbfc1d070a695a41a->leave($__internal_dbe32b832b833bc7f99971295ec7284c51ab47750377b0bdbfc1d070a695a41a_prof);
+        $__internal_d480de8344421e57a7f20de277df65aaf9f9f92d4349075504f3989128d19d22->leave($__internal_d480de8344421e57a7f20de277df65aaf9f9f92d4349075504f3989128d19d22_prof);
 
     }
 

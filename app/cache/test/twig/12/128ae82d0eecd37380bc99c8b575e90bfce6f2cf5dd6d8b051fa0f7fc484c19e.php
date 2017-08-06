@@ -21,20 +21,20 @@ class __TwigTemplate_af79eae824abb3f92ff13c173117cebacdf6e6e4eeac045a161a41047dd
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_636e8242d905cbd9ed3f885281f597e44130320069cdf91f8309ec7a01260e24 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_636e8242d905cbd9ed3f885281f597e44130320069cdf91f8309ec7a01260e24->enter($__internal_636e8242d905cbd9ed3f885281f597e44130320069cdf91f8309ec7a01260e24_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AJTReviewBundle:Reviews:index.html.twig"));
+        $__internal_006da4202ee25ea5e3b561f47127727b8718b490c916e224929749935fbbca98 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_006da4202ee25ea5e3b561f47127727b8718b490c916e224929749935fbbca98->enter($__internal_006da4202ee25ea5e3b561f47127727b8718b490c916e224929749935fbbca98_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AJTReviewBundle:Reviews:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_636e8242d905cbd9ed3f885281f597e44130320069cdf91f8309ec7a01260e24->leave($__internal_636e8242d905cbd9ed3f885281f597e44130320069cdf91f8309ec7a01260e24_prof);
+        $__internal_006da4202ee25ea5e3b561f47127727b8718b490c916e224929749935fbbca98->leave($__internal_006da4202ee25ea5e3b561f47127727b8718b490c916e224929749935fbbca98_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_380008c944d694c5496e9b8635ced1bd9f6eb313d55701c4742491d0b3615cdf = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_380008c944d694c5496e9b8635ced1bd9f6eb313d55701c4742491d0b3615cdf->enter($__internal_380008c944d694c5496e9b8635ced1bd9f6eb313d55701c4742491d0b3615cdf_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_70ec93e55463c6fde2bd45d0a1e1bd7eb246cc8152c440fd87e1bcc06553e27c = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_70ec93e55463c6fde2bd45d0a1e1bd7eb246cc8152c440fd87e1bcc06553e27c->enter($__internal_70ec93e55463c6fde2bd45d0a1e1bd7eb246cc8152c440fd87e1bcc06553e27c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "\t";
@@ -73,47 +73,43 @@ class __TwigTemplate_af79eae824abb3f92ff13c173117cebacdf6e6e4eeac045a161a41047dd
             // line 26
             echo twig_escape_filter($this->env, $this->getAttribute($context["rev"], "review", array()), "html", null, true);
             echo "</td>
-\t\t\t\t\t\t<!--<td>";
-            // line 27
-            echo twig_escape_filter($this->env, $this->getAttribute($context["rev"], "analysis", array()), "html", null, true);
-            echo " HOLA</td>-->
 \t\t\t\t\t\t<td>
 \t\t\t\t\t\t\t";
-            // line 29
+            // line 28
             $context["analysis"] = twig_split_filter($this->env, $this->getAttribute($context["rev"], "analysis", array()), ";");
-            // line 30
+            // line 29
             echo "\t\t\t\t\t\t\t";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable((isset($context["analysis"]) ? $context["analysis"] : $this->getContext($context, "analysis")));
             foreach ($context['_seq'] as $context["_key"] => $context["a"]) {
-                // line 31
+                // line 30
                 echo "\t\t\t\t\t\t\t\t";
                 if (($context["a"] != "")) {
-                    // line 32
+                    // line 31
                     echo "\t\t\t\t\t\t\t\t-> ";
                     echo twig_escape_filter($this->env, $context["a"], "html", null, true);
                     echo " <br/>
 \t\t\t\t\t\t\t\t";
                 }
-                // line 34
+                // line 33
                 echo "\t\t\t\t\t\t\t";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['a'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 35
+            // line 34
             echo "\t\t\t\t\t\t</td>
 \t\t\t\t\t\t<td>";
-            // line 36
+            // line 35
             echo twig_escape_filter($this->env, $this->getAttribute($context["rev"], "total", array()), "html", null, true);
             echo "</td>
 \t\t\t\t\t\t<td>
 \t\t\t\t\t\t\t<a class=\"btn btn-sm btn-primary\" href=\"";
-            // line 38
+            // line 37
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("ajt_review_run", array("page" => (isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")), "id" => $this->getAttribute($context["rev"], "id", array()))), "html", null, true);
             echo "\">Rate this review</a>
 \t\t\t\t\t\t\t<a class=\"btn btn-sm btn-danger\" href=\"";
-            // line 39
+            // line 38
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("ajt_review_deleteReview", array("page" => (isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")), "id" => $this->getAttribute($context["rev"], "id", array()))), "html", null, true);
             echo "\">Delete this review</a>
 \t\t\t\t\t\t</td>
@@ -123,9 +119,13 @@ class __TwigTemplate_af79eae824abb3f92ff13c173117cebacdf6e6e4eeac045a161a41047dd
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['rev'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 43
+        // line 42
         echo "
 \t\t\t</table>
+\t\t\t<a class=\"btn btn-sm btn-primary\" href=\"";
+        // line 44
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("ajt_review_runAll");
+        echo "\">Rate All</a>
 \t\t</div>
 
 \t\t<div>
@@ -156,7 +156,7 @@ class __TwigTemplate_af79eae824abb3f92ff13c173117cebacdf6e6e4eeac045a161a41047dd
 
 ";
         
-        $__internal_380008c944d694c5496e9b8635ced1bd9f6eb313d55701c4742491d0b3615cdf->leave($__internal_380008c944d694c5496e9b8635ced1bd9f6eb313d55701c4742491d0b3615cdf_prof);
+        $__internal_70ec93e55463c6fde2bd45d0a1e1bd7eb246cc8152c440fd87e1bcc06553e27c->leave($__internal_70ec93e55463c6fde2bd45d0a1e1bd7eb246cc8152c440fd87e1bcc06553e27c_prof);
 
     }
 
@@ -172,7 +172,7 @@ class __TwigTemplate_af79eae824abb3f92ff13c173117cebacdf6e6e4eeac045a161a41047dd
 
     public function getDebugInfo()
     {
-        return array (  150 => 52,  139 => 50,  135 => 49,  127 => 43,  117 => 39,  113 => 38,  108 => 36,  105 => 35,  99 => 34,  93 => 32,  90 => 31,  85 => 30,  83 => 29,  78 => 27,  74 => 26,  70 => 25,  67 => 24,  63 => 23,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  150 => 52,  139 => 50,  135 => 49,  127 => 44,  123 => 42,  113 => 38,  109 => 37,  104 => 35,  101 => 34,  95 => 33,  89 => 31,  86 => 30,  81 => 29,  79 => 28,  74 => 26,  70 => 25,  67 => 24,  63 => 23,  40 => 4,  34 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -211,7 +211,6 @@ class __TwigTemplate_af79eae824abb3f92ff13c173117cebacdf6e6e4eeac045a161a41047dd
 \t\t\t\t\t<tr>
 \t\t\t\t\t\t<td>{{ rev.id }}</td>
 \t\t\t\t\t\t<td>{{ rev.review }}</td>
-\t\t\t\t\t\t<!--<td>{{ rev.analysis }} HOLA</td>-->
 \t\t\t\t\t\t<td>
 \t\t\t\t\t\t\t{% set analysis = rev.analysis | split(';') %}
 \t\t\t\t\t\t\t{% for a in analysis%}
@@ -229,6 +228,7 @@ class __TwigTemplate_af79eae824abb3f92ff13c173117cebacdf6e6e4eeac045a161a41047dd
                 {% endfor %}
 
 \t\t\t</table>
+\t\t\t<a class=\"btn btn-sm btn-primary\" href=\"{{ path('ajt_review_runAll') }}\">Rate All</a>
 \t\t</div>
 
 \t\t<div>
@@ -243,6 +243,6 @@ class __TwigTemplate_af79eae824abb3f92ff13c173117cebacdf6e6e4eeac045a161a41047dd
 
 
 
-{% endblock %}", "AJTReviewBundle:Reviews:index.html.twig", "/home/antonio/Challenge/ReviewAnalyzer/src/AJT/ReviewBundle/Resources/views/Reviews/index.html.twig");
+{% endblock %}", "AJTReviewBundle:Reviews:index.html.twig", "/home/antonio/ChallengeRepo/ReviewAnalyzer/src/AJT/ReviewBundle/Resources/views/Reviews/index.html.twig");
     }
 }
